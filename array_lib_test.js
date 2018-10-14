@@ -18,6 +18,7 @@ const indexOfNumber = arrayLib.indexOfNumber;
 const isAscending = arrayLib.isAscending;
 const isDescending = arrayLib.isDescending;
 const extractNumber = arrayLib.extractNumber;
+const uniqueElements = arrayLib.uniqueElements;
 
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
@@ -275,3 +276,12 @@ assert.deepEqual(extractNumber(12),[1,2]);
 
 //using 3 digits
 assert.deepEqual(extractNumber(123),[1,2,3]);
+
+//unique elements of array
+//using a single element
+assert.deepEqual(uniqueElements([1]),[1]);
+
+//using 2 elemnts no repeat
+assert.deepEqual(uniqueElements([1,2]),[1,2]);
+//using 3 elements and a duplication
+assert.deepEqual(uniqueElements([1,2,2]),[1,2]);
