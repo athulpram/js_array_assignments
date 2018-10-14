@@ -157,7 +157,17 @@ const isAscending = function(numbers){
   return true;
 }
 
+const isDescending = function(numbers){
+  for(index=1;index<numbers.length;index++){
+    if(numbers[index-1]>numbers[index]){
+      return false;
+    }
+  }
+  return true;
+}
 
+
+exports.isDescending=isDescending;
 exports.isAscending=isAscending;
 exports.indexOfNumber = indexOfNumber;
 exports.frequencyBelowThreshold=frequencyBelowThreshold;
