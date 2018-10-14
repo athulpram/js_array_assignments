@@ -166,7 +166,16 @@ const isDescending = function(numbers){
   return true;
 }
 
+const extractNumber=function(number){
+  digitsOfNumber = [];
+  while(number>0){
+    digitsOfNumber.push(number%10);
+    number = Math.floor(number/10);
+  }
+  return reverseArray(digitsOfNumber);
+}
 
+exports.extractNumber=extractNumber;
 exports.isDescending=isDescending;
 exports.isAscending=isAscending;
 exports.indexOfNumber = indexOfNumber;
