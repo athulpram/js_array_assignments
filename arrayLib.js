@@ -175,6 +175,17 @@ const extractNumber=function(number){
   return reverseArray(digitsOfNumber);
 }
 
+const uniqueElements = function(numbers){
+  uniqueArray = [];
+  for(value of numbers){
+    if(indexOfNumber(uniqueArray,value)==-1){
+      uniqueArray.push(value);
+    }
+  }
+  return uniqueArray;
+}
+
+exports.uniqueElements=uniqueElements;
 exports.extractNumber=extractNumber;
 exports.isDescending=isDescending;
 exports.isAscending=isAscending;
