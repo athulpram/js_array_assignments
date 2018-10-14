@@ -185,6 +185,20 @@ const uniqueElements = function(numbers){
   return uniqueArray;
 }
 
+const unionOf=function(firstSet,secondSet){
+  unionArray = joinArrays(firstSet,secondSet);
+  return uniqueElements(unionArray);
+}
+
+const joinArrays=function(firstSet,secondSet){
+  joinedArray = firstSet;
+  for(value of secondSet){
+    joinedArray.push(value);
+  }
+  return joinedArray;
+}
+
+exports.unionOf=unionOf;
 exports.uniqueElements=uniqueElements;
 exports.extractNumber=extractNumber;
 exports.isDescending=isDescending;
