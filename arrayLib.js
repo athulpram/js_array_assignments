@@ -129,6 +129,17 @@ const frequencyAboveThreshold = function(numbers,threshold){
   return numberCount;
 }
 
+const frequencyBelowThreshold = function(numbers,threshold){
+  let numberCount = 0;
+  for(let number of numbers){
+    if(number < threshold){
+      numberCount++;
+    }
+  }
+  return numberCount;
+}
+
+exports.frequencyBelowThreshold=frequencyBelowThreshold;
 exports.frequencyAboveThreshold =frequencyAboveThreshold;
 exports.countOfEvenNumber=countOfEvenNumber;
 exports.countOfOddNumber=countOfOddNumber;
