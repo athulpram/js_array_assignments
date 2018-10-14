@@ -13,6 +13,8 @@ const mapLengthOfElements = arrayLib.mapLengthOfElements;
 const countOfOddNumber = arrayLib.countOfOddNumber;
 const countOfEvenNumber = arrayLib.countOfEvenNumber;
 const frequencyAboveThreshold = arrayLib.frequencyAboveThreshold;
+const frequencyBelowThreshold = arrayLib.frequencyBelowThreshold;
+
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
 let numbersArray=[4];
@@ -199,3 +201,15 @@ assert.deepEqual(frequencyAboveThreshold(numbers,1),2);
 //using multiple values
 numbers = [1,2,3,4,5,6,7,8];
 assert.deepEqual(frequencyAboveThreshold(numbers,3),5);
+
+//count of numbers below threshold
+//using 3 values
+numbers = [1,2,3];
+assert.deepEqual(frequencyBelowThreshold(numbers,2),1);
+
+//using multiple values
+numbers = [1,2,3,4,5,6,7,8];
+assert.deepEqual(frequencyBelowThreshold(numbers,6),5);
+
+
+
