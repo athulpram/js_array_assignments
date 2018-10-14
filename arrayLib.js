@@ -148,6 +148,17 @@ const indexOfNumber = function(numbers,value){
   return -1;
 }
 
+const isAscending = function(numbers){
+  for(index=1;index<numbers.length;index++){
+    if(numbers[index-1]>numbers[index]){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+exports.isAscending=isAscending;
 exports.indexOfNumber = indexOfNumber;
 exports.frequencyBelowThreshold=frequencyBelowThreshold;
 exports.frequencyAboveThreshold =frequencyAboveThreshold;
