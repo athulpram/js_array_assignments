@@ -19,6 +19,7 @@ const isAscending = arrayLib.isAscending;
 const isDescending = arrayLib.isDescending;
 const extractNumber = arrayLib.extractNumber;
 const uniqueElements = arrayLib.uniqueElements;
+const unionOf = arrayLib.unionOf;
 
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
@@ -285,3 +286,11 @@ assert.deepEqual(uniqueElements([1]),[1]);
 assert.deepEqual(uniqueElements([1,2]),[1,2]);
 //using 3 elements and a duplication
 assert.deepEqual(uniqueElements([1,2,2]),[1,2]);
+
+//union of two arrays
+//using single element arrays
+assert.deepEqual(unionOf([1],[2]),[1,2]);
+//using two multi element arrays
+assert.deepEqual(unionOf([1,2],[3,4]),[1,2,3,4]);
+//using duplicated elements
+assert.deepEqual(unionOf([1,2,3,5],[2,6,4,5]),[1,2,3,5,6,4]);
