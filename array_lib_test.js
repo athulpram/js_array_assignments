@@ -17,6 +17,8 @@ const frequencyBelowThreshold = arrayLib.frequencyBelowThreshold;
 const indexOfNumber = arrayLib.indexOfNumber;
 const isAscending = arrayLib.isAscending;
 const isDescending = arrayLib.isDescending;
+const extractNumber = arrayLib.extractNumber;
+
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
 let numbersArray=[4];
@@ -264,3 +266,12 @@ assert.deepEqual(isDescending(numbers),false);
 numbers= [1,2,3,5,8]
 assert.deepEqual(isDescending(numbers),true);
 
+//extract digits of a number
+//using single digit
+assert.deepEqual(extractNumber(1),[1]);
+
+//using 2 digits
+assert.deepEqual(extractNumber(12),[1,2]);
+
+//using 3 digits
+assert.deepEqual(extractNumber(123),[1,2,3]);
