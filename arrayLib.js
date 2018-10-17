@@ -225,6 +225,15 @@ const isSubset = function(firstSet,secondSet){
   return true;
 }
 
+const zipArray = function(firstSet,secondSet){
+  let zippedArray = [];
+  for(index=0;index<firstSet.length;index++){
+    zippedArray[index] = [firstSet[index],secondSet[index]]; 
+  }
+  return zippedArray;
+}
+
+exports.zipArray = zipArray;
 exports.isSubset=isSubset;
 exports.differenceOf=differenceOf;
 exports.intersectionOf=intersectionOf;

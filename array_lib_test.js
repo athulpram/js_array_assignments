@@ -23,6 +23,7 @@ const unionOf = arrayLib.unionOf;
 const intersectionOf = arrayLib.intersectionOf;
 const differenceOf=arrayLib.differenceOf;
 const isSubset = arrayLib.isSubset;
+const zipArray=arrayLib.zipArray;
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
 let numbersArray=[4];
@@ -332,4 +333,15 @@ assert.deepEqual(isSubset([],[]),true);
 
 //using multiple values
 assert.deepEqual(isSubset([1,2,3,4],[4,5]),false);
+
+//zip test cases
+//using empty array
+assert.deepEqual(zipArray([],[]),[]);
+
+//using single values
+assert.deepEqual(zipArray([1],[1]),[[1,1]]);
+
+//using multiple values
+assert.deepEqual(zipArray([1,2],[3,4]),[[1,3],[2,4]]);
+
 console.log("all tests passed");
