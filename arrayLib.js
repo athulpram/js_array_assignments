@@ -233,6 +233,29 @@ const zipArray = function(firstSet,secondSet){
   return zippedArray;
 }
 
+const rotate = function(numbers,strtingIndex){
+  let rotatedElements = [];
+  let revNumbers = reverseArray(numbers);
+  for(index=0;index<strtingIndex;index++){
+    rotatedElements.push(revNumbers.pop());
+  }
+  return joinArrays(reverseArray(revNumbers),rotatedElements);
+}
+
+const partitionOf=function(numbers,threshold){
+  let partitionedArray=[[],[]];
+  for(number of numbers){
+    partitionedArray[0].push(number);
+    if(number>threshold){
+      partitionedArray[1].push(number);
+      partitionedArray[0].pop();
+    }
+  }
+  return partitionedArray;
+}
+
+exports.partitionOf = partitionOf;
+exports.rotate=rotate;
 exports.zipArray = zipArray;
 exports.isSubset=isSubset;
 exports.differenceOf=differenceOf;

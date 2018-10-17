@@ -24,6 +24,8 @@ const intersectionOf = arrayLib.intersectionOf;
 const differenceOf=arrayLib.differenceOf;
 const isSubset = arrayLib.isSubset;
 const zipArray=arrayLib.zipArray;
+const rotate = arrayLib.rotate;
+const partitionOf = arrayLib.partitionOf;
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
 let numbersArray=[4];
@@ -345,3 +347,14 @@ assert.deepEqual(zipArray([1],[1]),[[1,1]]);
 assert.deepEqual(zipArray([1,2],[3,4]),[[1,3],[2,4]]);
 
 console.log("all tests passed");
+
+//rotate an array
+//given cases
+assert.deepEqual(rotate([1,2,3,4,5],2),[3,4,5,1,2]);
+
+//given case
+assert.deepEqual(rotate([1,2,3,4,5],4),[5,1,2,3,4]);
+
+//partition
+//
+assert.deepEqual(partitionOf([1,2,3,4,5,6],3),[[1,2,3],[4,5,6]]);
