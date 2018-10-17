@@ -20,6 +20,7 @@ const isDescending = arrayLib.isDescending;
 const extractNumber = arrayLib.extractNumber;
 const uniqueElements = arrayLib.uniqueElements;
 const unionOf = arrayLib.unionOf;
+const intersectionOf = arrayLib.intersectionOf;
 
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
@@ -294,3 +295,16 @@ assert.deepEqual(unionOf([1],[2]),[1,2]);
 assert.deepEqual(unionOf([1,2],[3,4]),[1,2,3,4]);
 //using duplicated elements
 assert.deepEqual(unionOf([1,2,3,5],[2,6,4,5]),[1,2,3,5,6,4]);
+
+//Intersection of two arrays test cases
+//using 2 same elements
+assert.deepEqual(intersectionOf([1],[1]),[1]);
+
+//using 2 values
+assert.deepEqual(intersectionOf([1,2],[1,2]),[1,2]);
+
+//different values
+assert.deepEqual(intersectionOf([1],[2]),[]);
+
+//multiple values
+assert.deepEqual(intersectionOf([1,2,3,4],[3,4,5,6]),[3,4]);
