@@ -35,10 +35,9 @@ const isOdd=function(number){
 }
 
 const reverseArray = function(numbers){
-  let reversedNumbers=[];
-  for(let index=numbers.length-1;index>=0;index--){
+  let reversedNumbers=[];  for(let index=numbers.length-1;index>=0;index--){
     reversedNumbers.push(numbers[index]);
-  }
+ }
   return reversedNumbers;
 }
 
@@ -98,7 +97,6 @@ const mapLengthOfElements = function(names){
   }
   return lengthOfNames;
 }
-
 const countOfOddNumber = function(numbers){
   let countOfOddNums = 0;
   for(let number of numbers){
@@ -198,6 +196,17 @@ const joinArrays=function(firstSet,secondSet){
   return joinedArray;
 }
 
+const intersectionOf = function (firstSet,secondSet){
+  intersectedElements=[];
+  for(number of firstSet){
+    if(indexOfNumber(secondSet,number)>=0){
+      intersectedElements.push(number);
+    }
+  }
+  return intersectedElements;
+}
+
+exports.intersectionOf=intersectionOf;
 exports.unionOf=unionOf;
 exports.uniqueElements=uniqueElements;
 exports.extractNumber=extractNumber;
