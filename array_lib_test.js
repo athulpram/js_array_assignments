@@ -21,6 +21,7 @@ const extractNumber = arrayLib.extractNumber;
 const uniqueElements = arrayLib.uniqueElements;
 const unionOf = arrayLib.unionOf;
 const intersectionOf = arrayLib.intersectionOf;
+const differenceOf=arrayLib.differenceOf;
 
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
@@ -63,6 +64,7 @@ assert.deepEqual(extractOddNumbers(numbersArray),[1,3,5]);
 //SUM OF NUMBERS
 //testing sum of array with one value
 numbersArray=[1];
+
 assert.deepEqual(sumOfNumbers(numbersArray),1);
 
 //testing sum of array with two values
@@ -264,7 +266,6 @@ assert.deepEqual(isDescending(numbers),true);
 //using multiple values
 numbers = [1,2,3,4,5,9,8];
 assert.deepEqual(isDescending(numbers),false);
-
 //checking for a value not in array should return -1
 numbers= [1,2,3,5,8]
 assert.deepEqual(isDescending(numbers),true);
@@ -308,3 +309,15 @@ assert.deepEqual(intersectionOf([1],[2]),[]);
 
 //multiple values
 assert.deepEqual(intersectionOf([1,2,3,4],[3,4,5,6]),[3,4]);
+
+//Diffrence of two arrays
+//using single values
+assert.deepEqual(differenceOf([1],[1]),[]);
+
+//using 2 values
+assert.deepEqual(differenceOf([1,2],[1]),[2]);
+
+//using multiple values
+assert.deepEqual(differenceOf([1,2,4],[3,2,5]),[1,4]);
+
+console.log("all tests passed");
