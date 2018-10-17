@@ -22,7 +22,7 @@ const uniqueElements = arrayLib.uniqueElements;
 const unionOf = arrayLib.unionOf;
 const intersectionOf = arrayLib.intersectionOf;
 const differenceOf=arrayLib.differenceOf;
-
+const isSubset = arrayLib.isSubset;
 //EXTRACTING ODD NUMBERS
 //testing with one even number 
 let numbersArray=[4];
@@ -320,4 +320,16 @@ assert.deepEqual(differenceOf([1,2],[1]),[2]);
 //using multiple values
 assert.deepEqual(differenceOf([1,2,4],[3,2,5]),[1,4]);
 
+//isSubset Function
+//using single value in array
+assert.deepEqual(isSubset([1],[1]),true);
+
+//using two values
+assert.deepEqual(isSubset([1,2],[1]),true);
+
+//using empty arrays
+assert.deepEqual(isSubset([],[]),true);
+
+//using multiple values
+assert.deepEqual(isSubset([1,2,3,4],[4,5]),false);
 console.log("all tests passed");
