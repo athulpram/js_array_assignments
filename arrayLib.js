@@ -206,6 +206,17 @@ const intersectionOf = function (firstSet,secondSet){
   return intersectedElements;
 }
 
+const differenceOf=function(firstSet,secondSet){
+  let differedElements=[];
+  for(number of firstSet){
+    if(indexOfNumber(secondSet,number)==-1){
+      differedElements.push(number); 
+    }
+  }
+  return differedElements;
+}
+
+exports.differenceOf=differenceOf;
 exports.intersectionOf=intersectionOf;
 exports.unionOf=unionOf;
 exports.uniqueElements=uniqueElements;
