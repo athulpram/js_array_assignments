@@ -34,10 +34,11 @@ const isOdd=function(number){
   return (number%2==1);
 }
 
-const reverseArray = function(numbers){
-  let reversedNumbers=[];  for(let index=numbers.length-1;index>=0;index--){
+const reverseElements = function(numbers){
+  let reversedNumbers=[];  
+  for(let index=numbers.length-1;index>=0;index--){
     reversedNumbers.push(numbers[index]);
- }
+  }
   return reversedNumbers;
 }
 
@@ -49,48 +50,48 @@ const extractAlternateElements = function(numbers){
   return alternateElements;
 }
 
-const fibonacciSeries= function(limit){
+const generateFibonacciSeries= function(limit){
   let firstNumber = 0;
   let secondNumber = 1;
-  let fibonacciSeries = [];
-  while(fibonacciSeries.length<limit){
-    fibonacciSeries.push(firstNumber);
+  let generateFibonacciSeries = [];
+  while(generateFibonacciSeries.length<limit){
+    generateFibonacciSeries.push(firstNumber);
     let copyVariable = secondNumber;
     secondNumber += firstNumber;
     firstNumber = secondNumber;
   }
-  return fibonacciSeries;
+  return generateFibonacciSeries;
 }
 
-const fiboReverse=function(limit){
-  return reverseArray(fibonacciSeries(limit));
+const reverseFibonacci=function(limit){
+  return reverseElements(generateFibonacciSeries(limit));
 }
 
-const greatestNumber = function(numbers){
-  let greatestNumber=0;
+const findGreatestNumber = function(numbers){
+  let findGreatestNumber=0;
   for(let number of numbers){
-    if(number > greatestNumber){
-      greatestNumber = number;
+    if(number > findGreatestNumber){
+      findGreatestNumber = number;
     }
   }
-  return greatestNumber;
+  return findGreatestNumber;
 }
 
-const lowestNumber = function(numbers){
-  let lowestNumber=numbers[0];
+const findLowestNumber = function(numbers){
+  let findLowestNumber=numbers[0];
   for(let number of numbers){
-    if(number < lowestNumber){
-      lowestNumber = number;
+    if(number < findLowestNumber){
+      findLowestNumber = number;
     }
   }
-  return lowestNumber;
+  return findLowestNumber;
 }
 
-const averageOfNumbers = function(numbers){
+const findAverage = function(numbers){
   return sumOfNumbers(numbers)/numbers.length; 
 }
 
-const mapLengthOfElements = function(names){
+const mapElements = function(names){
   lengthOfNames=[];
   for(let name of names){
     lengthOfNames.push(name.length);
@@ -117,7 +118,7 @@ const countOfEvenNumber = function(numbers){
   return countOfEvenNums;
 }
 
-const frequencyAboveThreshold = function(numbers,threshold){
+const countNumbersAboveValue = function(numbers,threshold){
   let numberCount = 0;
   for(let number of numbers){
     if(number > threshold){
@@ -127,7 +128,7 @@ const frequencyAboveThreshold = function(numbers,threshold){
   return numberCount;
 }
 
-const frequencyBelowThreshold = function(numbers,threshold){
+const countNumbersBelowValue = function(numbers,threshold){
   let numberCount = 0;
   for(let number of numbers){
     if(number < threshold){
@@ -170,10 +171,10 @@ const extractNumber=function(number){
     digitsOfNumber.push(number%10);
     number = Math.floor(number/10);
   }
-  return reverseArray(digitsOfNumber);
+  return reverseElements(digitsOfNumber);
 }
 
-const uniqueElements = function(numbers){
+const findUniqueElements = function(numbers){
   uniqueArray = [];
   for(value of numbers){
     if(indexOfNumber(uniqueArray,value)==-1){
@@ -185,7 +186,7 @@ const uniqueElements = function(numbers){
 
 const unionOf=function(firstSet,secondSet){
   unionArray = joinArrays(firstSet,secondSet);
-  return uniqueElements(unionArray);
+  return findUniqueElements(unionArray);
 }
 
 const joinArrays=function(firstSet,secondSet){
@@ -225,7 +226,7 @@ const isSubset = function(firstSet,secondSet){
   return true;
 }
 
-const zipArray = function(firstSet,secondSet){
+const zip = function(firstSet,secondSet){
   let zippedArray = [];
   for(index=0;index<firstSet.length;index++){
     zippedArray[index] = [firstSet[index],secondSet[index]]; 
@@ -235,11 +236,11 @@ const zipArray = function(firstSet,secondSet){
 
 const rotate = function(numbers,strtingIndex){
   let rotatedElements = [];
-  let revNumbers = reverseArray(numbers);
+  let revNumbers = reverseElements(numbers);
   for(index=0;index<strtingIndex;index++){
     rotatedElements.push(revNumbers.pop());
   }
-  return joinArrays(reverseArray(revNumbers),rotatedElements);
+  return joinArrays(reverseElements(revNumbers),rotatedElements);
 }
 
 const partitionOf=function(numbers,threshold){
@@ -256,27 +257,27 @@ const partitionOf=function(numbers,threshold){
 
 exports.partitionOf = partitionOf;
 exports.rotate=rotate;
-exports.zipArray = zipArray;
+exports.zip = zip;
 exports.isSubset=isSubset;
 exports.differenceOf=differenceOf;
 exports.intersectionOf=intersectionOf;
 exports.unionOf=unionOf;
-exports.uniqueElements=uniqueElements;
+exports.findUniqueElements=findUniqueElements;
 exports.extractNumber=extractNumber;
 exports.isDescending=isDescending;
 exports.isAscending=isAscending;
 exports.indexOfNumber = indexOfNumber;
-exports.frequencyBelowThreshold=frequencyBelowThreshold;
-exports.frequencyAboveThreshold =frequencyAboveThreshold;
+exports.countNumbersBelowValue=countNumbersBelowValue;
+exports.countNumbersAboveValue =countNumbersAboveValue;
 exports.countOfEvenNumber=countOfEvenNumber;
 exports.countOfOddNumber=countOfOddNumber;
-exports.mapLengthOfElements=mapLengthOfElements;
+exports.mapElements=mapElements;
 exports.extractEvenNumbers=extractEvenNumbers;
 exports.extractOddNumbers=extractOddNumbers;
 exports.sumOfNumbers = sumOfNumbers;
-exports.reverseArray = reverseArray;
-exports.fiboReverse = fiboReverse;
+exports.reverseElements = reverseElements;
+exports.reverseFibonacci = reverseFibonacci;
 exports.extractAlternateElements =extractAlternateElements;
-exports.greatestNumber=greatestNumber;
-exports.lowestNumber=lowestNumber;
-exports.averageOfNumbers = averageOfNumbers;
+exports.findGreatestNumber=findGreatestNumber;
+exports.findLowestNumber=findLowestNumber;
+exports.findAverage = findAverage;

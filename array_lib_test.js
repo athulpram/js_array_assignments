@@ -3,27 +3,27 @@ const assert = require("assert");
 const extractOddNumbers = arrayLib.extractOddNumbers;
 const extractEvenNumbers = arrayLib.extractEvenNumbers;
 const sumOfNumbers = arrayLib.sumOfNumbers;
-const reverseArray = arrayLib.reverseArray;
+const reverseElements = arrayLib.reverseElements;
 const extractAlternateElements = arrayLib.extractAlternateElements;
-const fiboReverse = arrayLib.fiboReverse;
-const greatestNumber=arrayLib.greatestNumber;
-const lowestNumber=arrayLib.lowestNumber;
-const averageOfNumbers =arrayLib.averageOfNumbers;
-const mapLengthOfElements = arrayLib.mapLengthOfElements;
+const reverseFibonacci = arrayLib.reverseFibonacci;
+const findGreatestNumber=arrayLib.findGreatestNumber;
+const findLowestNumber=arrayLib.findLowestNumber;
+const findAverage =arrayLib.findAverage;
+const mapElements = arrayLib.mapElements;
 const countOfOddNumber = arrayLib.countOfOddNumber;
 const countOfEvenNumber = arrayLib.countOfEvenNumber;
-const frequencyAboveThreshold = arrayLib.frequencyAboveThreshold;
-const frequencyBelowThreshold = arrayLib.frequencyBelowThreshold;
+const countNumbersAboveValue = arrayLib.countNumbersAboveValue;
+const countNumbersBelowValue = arrayLib.countNumbersBelowValue;
 const indexOfNumber = arrayLib.indexOfNumber;
 const isAscending = arrayLib.isAscending;
 const isDescending = arrayLib.isDescending;
 const extractNumber = arrayLib.extractNumber;
-const uniqueElements = arrayLib.uniqueElements;
+const findUniqueElements = arrayLib.findUniqueElements;
 const unionOf = arrayLib.unionOf;
 const intersectionOf = arrayLib.intersectionOf;
 const differenceOf=arrayLib.differenceOf;
 const isSubset = arrayLib.isSubset;
-const zipArray=arrayLib.zipArray;
+const zip=arrayLib.zip;
 const rotate = arrayLib.rotate;
 const partitionOf = arrayLib.partitionOf;
 //EXTRACTING ODD NUMBERS
@@ -85,15 +85,15 @@ assert.deepEqual(sumOfNumbers(numbersArray),3);
 //REVERSE
 //reverse print of one element
 numbersArray=[1];
-assert.deepEqual(reverseArray(numbersArray),[1]);
+assert.deepEqual(reverseElements(numbersArray),[1]);
 
 //reverse print two elements 
 numbersArray=[1,2];
-assert.deepEqual(reverseArray(numbersArray),[2,1]);
+assert.deepEqual(reverseElements(numbersArray),[2,1]);
 
 //reverse print using 3 elements 
 numbersArray=[3,4,2];
-assert.deepEqual(reverseArray(numbersArray),[2,4,3]);
+assert.deepEqual(reverseElements(numbersArray),[2,4,3]);
 
 //EXTRACTING EVERY SECOND ELEMENTS
 //extract altrenate elements of an array with one element
@@ -106,78 +106,78 @@ assert.deepEqual(extractAlternateElements(numbersArray),[2]);
 
 //REVERSE FIBONACCI
 //revered fibonacci of one limit
-assert.deepEqual(fiboReverse(1),[0]);
+assert.deepEqual(reverseFibonacci(1),[0]);
 
 //reversed fibonacci series of limit 2
-assert.deepEqual(fiboReverse(2),[1,0]);
+assert.deepEqual(reverseFibonacci(2),[1,0]);
 
 //GREATEST NUMBER
 //using 1 value
 numbersArray=[1];
-assert.deepEqual(greatestNumber(numbersArray),1);
+assert.deepEqual(findGreatestNumber(numbersArray),1);
 
 //using 2 value
 numbersArray=[1,2];
-assert.deepEqual(greatestNumber(numbersArray),2);
+assert.deepEqual(findGreatestNumber(numbersArray),2);
 
 //using multiple values
 numbersArray=[1,4,8,6];
-assert.deepEqual(greatestNumber(numbersArray),8);
+assert.deepEqual(findGreatestNumber(numbersArray),8);
 
 //using negative values
 numbersArray=[1,-6,7,5];
-assert.deepEqual(greatestNumber(numbersArray),7);
+assert.deepEqual(findGreatestNumber(numbersArray),7);
 
 //LOWEST NUMBER
 //using 1 value
 numbersArray=[1];
-assert.deepEqual(lowestNumber(numbersArray),1);
+assert.deepEqual(findLowestNumber(numbersArray),1);
 
 //using 2 value
 numbersArray=[1,2];
-assert.deepEqual(lowestNumber(numbersArray),1);
+assert.deepEqual(findLowestNumber(numbersArray),1);
 
 //using multiple values
 numbersArray=[1,4,8,6];
-assert.deepEqual(lowestNumber(numbersArray),1);
+assert.deepEqual(findLowestNumber(numbersArray),1);
 
 //using negative values
 numbersArray=[1,-6,7,5];
-assert.deepEqual(lowestNumber(numbersArray),-6);
+assert.deepEqual(findLowestNumber(numbersArray),-6);
 
 //AVERAGE
 //using 1 value
 numbersArray=[1];
-assert.deepEqual(averageOfNumbers(numbersArray),1);
+assert.deepEqual(findAverage(numbersArray),1);
 
 //using 2 value
 numbersArray=[1,2,3];
-assert.deepEqual(averageOfNumbers(numbersArray),2);
+assert.deepEqual(findAverage(numbersArray),2);
 
 //using multiple values
 numbersArray=[1,5,6];
-assert.deepEqual(averageOfNumbers(numbersArray),4);
+assert.deepEqual(findAverage(numbersArray),4);
 
 //using negative values
 numbersArray=[1,-6,6,5];
-assert.deepEqual(averageOfNumbers(numbersArray),1.5);
+assert.deepEqual(findAverage(numbersArray),1.5);
 
 //Mapping length
 //using one element
 let names = ["athul"];
-assert.deepEqual(mapLengthOfElements(names),[5]);
+assert.deepEqual(mapElements(names),[5]);
 
 //using 2 names
 names = ["steve","bill"];
-assert.deepEqual(mapLengthOfElements(names),[5,4]);
+assert.deepEqual(mapElements(names),[5,4]);
 
 //using empty string
 names = ["","bill"];
-assert.deepEqual(mapLengthOfElements(names),[0,4]);
+assert.deepEqual(mapElements(names),[0,4]);
 
 //using multiple values
 names = ["athul","moumita","ankon","rahul","rishab"];
-assert.deepEqual(mapLengthOfElements(names),[5,7,5,5,6]);
+assert.deepEqual(mapElements(names),[5,7,5,5,6]);
 
 //ODD NUMBER COUNT
 //using one value
@@ -208,20 +208,20 @@ assert.deepEqual(countOfEvenNumber(numbers),2);
 //Count of numbers above threshold
 //using 3 values
 numbers = [1,2,3];
-assert.deepEqual(frequencyAboveThreshold(numbers,1),2);
+assert.deepEqual(countNumbersAboveValue(numbers,1),2);
 
 //using multiple values
 numbers = [1,2,3,4,5,6,7,8];
-assert.deepEqual(frequencyAboveThreshold(numbers,3),5);
+assert.deepEqual(countNumbersAboveValue(numbers,3),5);
 
 //count of numbers below threshold
 //using 3 values
 numbers = [1,2,3];
-assert.deepEqual(frequencyBelowThreshold(numbers,2),1);
+assert.deepEqual(countNumbersBelowValue(numbers,2),1);
 
 //using multiple values
 numbers = [1,2,3,4,5,6,7,8];
-assert.deepEqual(frequencyBelowThreshold(numbers,6),5);
+assert.deepEqual(countNumbersBelowValue(numbers,6),5);
 
 //indexOfNumber 
 //using 1 values
@@ -230,7 +230,7 @@ assert.deepEqual(indexOfNumber(number,1),0);
 
 //using 3 values
 numbers = [1,2,3];
-assert.deepEqual(frequencyBelowThreshold(numbers,2),1);
+assert.deepEqual(indexOfNumber(numbers,2),1);
 
 //using multiple values
 numbers = [1,2,3,4,5,6,7,8];
@@ -285,12 +285,12 @@ assert.deepEqual(extractNumber(123),[1,2,3]);
 
 //unique elements of array
 //using a single element
-assert.deepEqual(uniqueElements([1]),[1]);
+assert.deepEqual(findUniqueElements([1]),[1]);
 
 //using 2 elemnts no repeat
-assert.deepEqual(uniqueElements([1,2]),[1,2]);
+assert.deepEqual(findUniqueElements([1,2]),[1,2]);
 //using 3 elements and a duplication
-assert.deepEqual(uniqueElements([1,2,2]),[1,2]);
+assert.deepEqual(findUniqueElements([1,2,2]),[1,2]);
 
 //union of two arrays
 //using single element arrays
@@ -338,13 +338,13 @@ assert.deepEqual(isSubset([1,2,3,4],[4,5]),false);
 
 //zip test cases
 //using empty array
-assert.deepEqual(zipArray([],[]),[]);
+assert.deepEqual(zip([],[]),[]);
 
 //using single values
-assert.deepEqual(zipArray([1],[1]),[[1,1]]);
+assert.deepEqual(zip([1],[1]),[[1,1]]);
 
 //using multiple values
-assert.deepEqual(zipArray([1,2],[3,4]),[[1,3],[2,4]]);
+assert.deepEqual(zip([1,2],[3,4]),[[1,3],[2,4]]);
 
 console.log("all tests passed");
 
