@@ -216,6 +216,16 @@ const differenceOf=function(firstSet,secondSet){
   return differedElements;
 }
 
+const isSubset = function(firstSet,secondSet){
+  for(number of secondSet){
+    if(indexOfNumber(firstSet,number)==-1){
+      return false;
+    }
+  }
+  return true;
+}
+
+exports.isSubset=isSubset;
 exports.differenceOf=differenceOf;
 exports.intersectionOf=intersectionOf;
 exports.unionOf=unionOf;
