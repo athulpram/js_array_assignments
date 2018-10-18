@@ -346,15 +346,27 @@ assert.deepEqual(zip([1],[1]),[[1,1]]);
 //using multiple values
 assert.deepEqual(zip([1,2],[3,4]),[[1,3],[2,4]]);
 
-console.log("all tests passed");
 
 //rotate an array
 //given cases
+
+assert.deepEqual(rotate([1],0),[1]);
+
 assert.deepEqual(rotate([1,2,3,4,5],2),[3,4,5,1,2]);
 
 //given case
 assert.deepEqual(rotate([1,2,3,4,5],4),[5,1,2,3,4]);
 
+
 //partition
 //
+assert.deepEqual(partitionOf([],1),[[],[]]);
+
+assert.deepEqual(partitionOf([1],2),[[1],[]]);
+
 assert.deepEqual(partitionOf([1,2,3,4,5,6],3),[[1,2,3],[4,5,6]]);
+
+assert.deepEqual(partitionOf([1,2,3,4,5],4),[[1,2,3,4],[5]]);
+
+
+console.log("all tests passed");
