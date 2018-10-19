@@ -95,6 +95,9 @@ assert.deepEqual(reverseElements(numbersArray),[2,1]);
 numbersArray=[3,4,2];
 assert.deepEqual(reverseElements(numbersArray),[2,4,3]);
 
+numbersArray=[2,9,7,5]
+assert.deepEqual(reverseElements(numbersArray),[5,7,9,2]);
+
 //EXTRACTING EVERY SECOND ELEMENTS
 //extract altrenate elements of an array with one element
 numbersArray=[1];
@@ -103,6 +106,8 @@ assert.deepEqual(extractAlternateElements(numbersArray),[]);
 //extract alternate elemnents of an array with two elements
 numbersArray=[1,2];
 assert.deepEqual(extractAlternateElements(numbersArray),[2]);
+assert.deepEqual(extractAlternateElements([3,2,5,4]),[2,4]);
+assert.deepEqual(extractAlternateElements([3,2,6,3]),[2,3]);
 
 //REVERSE FIBONACCI
 //revered fibonacci of one limit
@@ -110,6 +115,8 @@ assert.deepEqual(reverseFibonacci(1),[0]);
 
 //reversed fibonacci series of limit 2
 assert.deepEqual(reverseFibonacci(2),[1,0]);
+assert.deepEqual(reverseFibonacci(3),[1,1,0]);
+assert.deepEqual(reverseFibonacci(4),[2,1,1,0]);
 
 //GREATEST NUMBER
 //using 1 value
@@ -204,6 +211,7 @@ assert.deepEqual(countOfEvenNumber(numbers),1);
 //using multiple numbers
 numbers = [1,2,3,4,5];
 assert.deepEqual(countOfEvenNumber(numbers),2);
+assert.deepEqual(countOfEvenNumber([3,2,5,2,4]),3);
 
 //Count of numbers above threshold
 //using 3 values
@@ -213,6 +221,8 @@ assert.deepEqual(countNumbersAboveValue(numbers,1),2);
 //using multiple values
 numbers = [1,2,3,4,5,6,7,8];
 assert.deepEqual(countNumbersAboveValue(numbers,3),5);
+assert.deepEqual(countNumbersAboveValue([1,4,3,5,3],4),1);
+assert.deepEqual(countNumbersAboveValue([1,2,3,4,5,6,7,8],8),0);
 
 //count of numbers below threshold
 //using 3 values
@@ -222,6 +232,8 @@ assert.deepEqual(countNumbersBelowValue(numbers,2),1);
 //using multiple values
 numbers = [1,2,3,4,5,6,7,8];
 assert.deepEqual(countNumbersBelowValue(numbers,6),5);
+assert.deepEqual(countNumbersBelowValue(numbers,3),2);
+assert.deepEqual(countNumbersBelowValue([1,6,4,3,6],4),2);
 
 //indexOfNumber 
 //using 1 values
@@ -346,6 +358,8 @@ assert.deepEqual(zip([1],[1]),[[1,1]]);
 //using multiple values
 assert.deepEqual(zip([1,2],[3,4]),[[1,3],[2,4]]);
 
+assert.deepEqual(zip([1,2,3],[3,4,5]),[[1,3],[2,4],[3,5]]);
+
 
 //rotate an array
 //given cases
@@ -356,6 +370,7 @@ assert.deepEqual(rotate([1,2,3,4,5],2),[3,4,5,1,2]);
 
 //given case
 assert.deepEqual(rotate([1,2,3,4,5],4),[5,1,2,3,4]);
+assert.deepEqual(rotate([1,2,3,4,5,6,7],4),[5,6,7,1,2,3,4]);
 
 
 //partition

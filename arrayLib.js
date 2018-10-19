@@ -54,12 +54,12 @@ const extractAlternateElements = function(numbers){
 const generateFibonacciSeries= function(limit){
   let firstNumber = 0;
   let secondNumber = 1;
-  let generateFibonacciSeries = [];
+  let generateFibonacciSeries = [0];
   while(generateFibonacciSeries.length<limit){
-    generateFibonacciSeries.push(firstNumber);
-    let copyVariable = secondNumber;
+    let swapVariable = secondNumber;
     secondNumber += firstNumber;
-    firstNumber = secondNumber;
+    firstNumber = swapVariable;
+    generateFibonacciSeries.push(firstNumber);
   }
   return generateFibonacciSeries;
 }
@@ -69,13 +69,13 @@ const reverseFibonacci=function(limit){
 }
 
 const findGreatestNumber = function(numbers){
-  let findGreatestNumber=0;
+  let greatestNumber=0;
   for(let number of numbers){
-    if(number > findGreatestNumber){
-      findGreatestNumber = number;
+    if(number > greatestNumber){
+      greatestNumber = number;
     }
   }
-  return findGreatestNumber;
+  return greatestNumber;
 }
 
 const findLowestNumber = function(numbers){
