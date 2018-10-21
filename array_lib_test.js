@@ -17,7 +17,7 @@ const countNumbersBelowValue = arrayLib.countNumbersBelowValue;
 const indexOfNumber = arrayLib.indexOfNumber;
 const isAscending = arrayLib.isAscending;
 const isDescending = arrayLib.isDescending;
-const extractNumber = arrayLib.extractNumber;
+const extractDigits = arrayLib.extractDigits;
 const findUniqueElements = arrayLib.findUniqueElements;
 const unionOf = arrayLib.unionOf;
 const intersectionOf = arrayLib.intersectionOf;
@@ -287,13 +287,13 @@ assert.deepEqual(isDescending(numbers),true);
 
 //extract digits of a number
 //using single digit
-assert.deepEqual(extractNumber(1),[1]);
+assert.deepEqual(extractDigits(1),[1]);
 
 //using 2 digits
-assert.deepEqual(extractNumber(12),[1,2]);
+assert.deepEqual(extractDigits(12),[1,2]);
 
 //using 3 digits
-assert.deepEqual(extractNumber(123),[1,2,3]);
+assert.deepEqual(extractDigits(123),[1,2,3]);
 
 //unique elements of array
 //using a single element

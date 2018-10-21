@@ -1,22 +1,16 @@
-const {indexOfNumber,findUniqueElements,joinArrays,differenceOf,unionOf,intersectionOf,isSubset} = require('./setFunctionLibrary.js');
+const { indexOfNumber,
+  findUniqueElements,
+  joinArrays,
+  differenceOf,
+  unionOf,
+  intersectionOf,
+  isSubset} = require('./setFunctionLibrary.js');
 const extractOddNumbers = function(numbers){
-  let oddnumbers=[];
-  for(let number of numbers){
-    if(isOdd(number)){
-      oddnumbers.push(number);
-    }
-  }
-  return oddnumbers;
+  return numbers.filter(isOdd);
 }
 
 const extractEvenNumbers = function(numbers){
-  let evenNumbers=[];
-  for(let number of numbers){
-    if(isEven(number)){
-      evenNumbers.push(number);
-    }
-  }
-  return evenNumbers;
+  return numbers.filter(isEven);
 }
 
 const sumOfNumbers=function(numbers){
@@ -157,11 +151,11 @@ const isDescending = function(numbers){
   return true;
 }
 
-const extractNumber=function(number){
+const extractDigits=function(number){
   digitsOfNumber = [];
-  while(number>0){
+  while(number!=0){
     digitsOfNumber.push(number%10);
-    number = Math.floor(number/10);
+    number = Math.floor(Math.abs(number/10));
   }
   return reverseElements(digitsOfNumber);
 }
@@ -203,7 +197,7 @@ exports.differenceOf=differenceOf;
 exports.intersectionOf=intersectionOf;
 exports.unionOf=unionOf;
 exports.findUniqueElements=findUniqueElements;
-exports.extractNumber=extractNumber;
+exports.extractDigits=extractDigits;
 exports.isDescending=isDescending;
 exports.isAscending=isAscending;
 exports.indexOfNumber = indexOfNumber;
