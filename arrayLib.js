@@ -15,9 +15,9 @@ const extractEvenNumbers = function(numbers){
 
 const sumOfNumbers=function(numbers){
   let totalSum = 0
-  for(let number of numbers){
-    totalSum = totalSum + number;
-  }
+  totalSum=numbers.reduce(function(num1,num2){
+    return num1+num2;
+  });
   return totalSum;
 }
 
@@ -31,9 +31,10 @@ const isOdd=function(number){
 
 const reverseElements = function(numbers){
   let reversedNumbers=[];  
-  for(let index=numbers.length-1;index>=0;index--){
-    reversedNumbers.push(numbers[index]);
-  }
+  reversedNumbers = numbers.reduce( function(storeArray,element){
+    storeArray.unshift(element);
+    return storeArray;
+  },[]);
   return reversedNumbers;
 }
 
@@ -63,23 +64,15 @@ const reverseFibonacci=function(limit){
 }
 
 const findGreatestNumber = function(numbers){
-  let greatestNumber=0;
-  for(let number of numbers){
-    if(number > greatestNumber){
-      greatestNumber = number;
-    }
-  }
-  return greatestNumber;
+  return numbers.reduce(function(num1,num2){
+    return (num1>num2)?num1:num2;
+  });
 }
 
 const findLowestNumber = function(numbers){
-  let findLowestNumber=numbers[0];
-  for(let number of numbers){
-    if(number < findLowestNumber){
-      findLowestNumber = number;
-    }
-  }
-  return findLowestNumber;
+  return numbers.reduce(function(num1,num2){
+    return (num1<num2)?num1:num2;
+  });
 }
 
 const findAverage = function(numbers){
