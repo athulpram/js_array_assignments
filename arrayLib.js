@@ -80,30 +80,21 @@ const findAverage = function(numbers){
 }
 
 const mapElements = function(names){
-  lengthOfNames=[];
-  for(let name of names){
-    lengthOfNames.push(name.length);
-  }
-  return lengthOfNames;
+  return names.reduce(function(mappedLength,name){
+    mappedLength.push(name.length);
+    return mappedLength;
+  },[]);
 }
 const countOfOddNumber = function(numbers){
-  let countOfOddNums = 0;
-  for(let number of numbers){
-    if(isOdd(number)){
-      countOfOddNums++;
-    }
-  }
-  return countOfOddNums;
+  return numbers.reduce(function(count,element){
+    return (isOdd(element))?++count:count;
+  },0);
 }
 
 const countOfEvenNumber = function(numbers){
-  let countOfEvenNums = 0;
-  for(let number of numbers){
-    if(isEven(number)){
-      countOfEvenNums++;
-    }
-  }
-  return countOfEvenNums;
+  return numbers.reduce(function(count,element){
+    return (isEven(element))?++count:count;
+  },0);
 }
 
 const countNumbersAboveValue = function(numbers,threshold){
