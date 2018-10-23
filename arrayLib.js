@@ -12,13 +12,13 @@ const extractOddNumbers = function(numbers){
 const extractEvenNumbers = function(numbers){
   return numbers.filter(isEven);
 }
-
+const sum = function(num1,num2){
+  return num1+num2;
+}
 const sumOfNumbers=function(numbers){
   let totalSum = 0
-  totalSum=numbers.reduce(function(num1,num2){
-    return num1+num2;
-  });
-  return totalSum;
+  totalSum=numbers.reduce(sum);
+   return totalSum;
 }
 
 const isEven = function(number){
@@ -29,12 +29,14 @@ const isOdd=function(number){
   return (number%2==1);
 }
 
+const insertAtBegin = function(storeArray,element){
+  storeArray.unshift(element);
+  return storeArray;
+}
+
 const reverseElements = function(numbers){
   let reversedNumbers=[];  
-  reversedNumbers = numbers.reduce( function(storeArray,element){
-    storeArray.unshift(element);
-    return storeArray;
-  },[]);
+  reversedNumbers = numbers.reduce(insertAtBegin,[]);
   return reversedNumbers;
 }
 
@@ -63,38 +65,40 @@ const reverseFibonacci=function(limit){
   return reverseElements(generateFibonacciSeries(limit));
 }
 
+const findGreater = function(num1,num2){
+  return (num1>num2)?num1:num2;
+}
+
+const findSmaller = function(num1,num2){
+  return (num1<num2)?num1:num2;
+}
+
 const findGreatestNumber = function(numbers){
-  return numbers.reduce(function(num1,num2){
-    return (num1>num2)?num1:num2;
-  });
+  return numbers.reduce(findGreater);
 }
 
 const findLowestNumber = function(numbers){
-  return numbers.reduce(function(num1,num2){
-    return (num1<num2)?num1:num2;
-  });
+  return numbers.reduce(findSmaller);
 }
 
 const findAverage = function(numbers){
   return sumOfNumbers(numbers)/numbers.length; 
 }
 
-const mapElements = function(names){
-  return names.reduce(function(mappedLength,name){
-    mappedLength.push(name.length);
-    return mappedLength;
-  },[]);
+const findLength = function(name){
+  return name.length;
 }
+
+const mapElements = function(names){
+  return names.map(findLength);
+}
+
 const countOfOddNumber = function(numbers){
-  return numbers.reduce(function(count,element){
-    return (isOdd(element))?++count:count;
-  },0);
+  return numbers.filter(isOdd).length;
 }
 
 const countOfEvenNumber = function(numbers){
-  return numbers.reduce(function(count,element){
-    return (isEven(element))?++count:count;
-  },0);
+  return numbers.filter(isEven).length;
 }
 
 const countNumbersAboveValue = function(numbers,threshold){
