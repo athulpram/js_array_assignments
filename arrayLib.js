@@ -127,13 +127,15 @@ const countNumbersBelowValue = function(numbers,threshold){
   return numberCount;
 }
 
+const isGreater = function(obj,val){
+  obj.state = obj.preValue<=val && obj.state;
+	obj.preValue=val;
+  return obj;
+}
+
 const isAscending = function(numbers){
-  for(index=1;index<numbers.length;index++){
-    if(numbers[index-1]>numbers[index]){
-      return false;
-    }
-  }
-  return true;
+  isAscObj=numbers.reduce(isGreater,{preValue:'',state:true});
+  return isAscObj.state;
 }
 
 const isDescending = function(numbers){
