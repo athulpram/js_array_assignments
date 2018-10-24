@@ -66,11 +66,17 @@ const reverseFibonacci=function(limit){
 }
 
 const findGreater = function(num1,num2){
-  return (num1>num2)?num1:num2;
+  if(num1>num2){
+    return num1
+  }
+  return num2;
 }
 
 const findSmaller = function(num1,num2){
-  return (num1<num2)?num1:num2;
+  if(num1<num2){
+    num1
+  }
+  return num2;
 }
 
 const findGreatestNumber = function(numbers){
